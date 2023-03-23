@@ -2,7 +2,7 @@ from owlready2 import *
 
 onto_path.append("/Users/weizhang/ontology/repository")
 
-onto = get_ontology("http://www.w3.org/TR/skos-reference/skos.rdf")
+onto = get_ontology("pizza_onto.owl")
 
 onto.load()
 print("-------------classes------------------")
@@ -15,7 +15,7 @@ for ind in onto.individuals():
 print("-------------------------------")
 print("----------properties---------------------")
 for ind in onto.properties():
-    print(f"${ind} with ${ind.__class__}")
+    print(f"${ind} is a ${ind.__class__} and domain is ${ind.domain} and range is ${ind.range}")
 
 print("-------------------------------")
 # class NonVegetarianPizza(onto.Pizza):
@@ -29,5 +29,5 @@ print("-------------------------------")
 
 
 
-onto.save()
+# onto.save()
 
